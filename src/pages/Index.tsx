@@ -24,12 +24,16 @@ const Index = () => {
     setCurrentPage("dashboard");
   };
 
+  const handleLanguageChange = () => {
+    setCurrentPage("onboarding");
+  };
+
   if (currentPage === "onboarding") {
     return <Onboarding onComplete={handleOnboardingComplete} />;
   }
 
   if (currentPage === "dashboard") {
-    return <Dashboard onNavigate={handleNavigate} language={selectedLanguage} />;
+    return <Dashboard onNavigate={handleNavigate} language={selectedLanguage} onLanguageChange={handleLanguageChange} />;
   }
 
   if (currentPage === "soil") {

@@ -1,0 +1,82 @@
+export const translations = {
+  en: {
+    greeting: "Good Morning",
+    subtitle: "Ready to grow your crops smarter?",
+    location: "Rajkot, Gujarat",
+    weatherAlert: "Weather Alert",
+    weatherAlertText: "Heavy rain expected tomorrow - avoid spraying",
+    smartFarmingTools: "Smart Farming Tools",
+    quickStats: "Quick Stats",
+    scansLabel: "Scans Done",
+    avgPriceLabel: "Avg Price",
+    accuracyLabel: "Accuracy",
+    features: {
+      soil: { title: "Soil Scan", description: "Analyze soil type" },
+      pest: { title: "Pest Scan", description: "Detect crop diseases" },
+      advisor: { title: "Ask Advisor", description: "Voice assistance" },
+      weather: { title: "Weather", description: "7-day forecast" },
+      market: { title: "Market Prices", description: "Latest mandi rates" },
+      history: { title: "History", description: "Past advisories" },
+    }
+  },
+  hi: {
+    greeting: "सुप्रभात",
+    subtitle: "अपनी फसलों को स्मार्ट तरीके से बढ़ाने के लिए तैयार हैं?",
+    location: "राजकोट, गुजरात",
+    weatherAlert: "मौसम चेतावनी",
+    weatherAlertText: "कल भारी बारिश की संभावना - छिड़काव न करें",
+    smartFarmingTools: "स्मार्ट खेती के उपकरण",
+    quickStats: "त्वरित आंकड़े",
+    scansLabel: "स्कैन किए गए",
+    avgPriceLabel: "औसत मूल्य",
+    accuracyLabel: "सटीकता",
+    features: {
+      soil: { title: "मिट्टी स्कैन", description: "मिट्टी का प्रकार जानें" },
+      pest: { title: "कीट स्कैन", description: "फसल रोग पहचानें" },
+      advisor: { title: "सलाहकार से पूछें", description: "आवाज सहायता" },
+      weather: { title: "मौसम", description: "7-दिन का पूर्वानुमान" },
+      market: { title: "बाजार मूल्य", description: "नवीनतम मंडी भाव" },
+      history: { title: "इतिहास", description: "पिछली सलाह" },
+    }
+  },
+  ta: {
+    greeting: "காலை வணக்கம்",
+    subtitle: "உங்கள் பயிர்களை புத்திசாலித்தனமாக வளர்க்க தயாரா?",
+    location: "ராஜ்கோட், குஜராத்",
+    weatherAlert: "வானிலை எச்சரிக்கை",
+    weatherAlertText: "நாளை கனமழை எதிர்பார்க்கப்படுகிறது - தெளிக்க வேண்டாம்",
+    smartFarmingTools: "ஸ்மார்ட் விவசாய கருவிகள்",
+    quickStats: "விரைவு புள்ளிவிவரங்கள்",
+    scansLabel: "ஸ்கேன் செய்யப்பட்டது",
+    avgPriceLabel: "சராசரி விலை",
+    accuracyLabel: "துல்லியம்",
+    features: {
+      soil: { title: "மண் ஸ்கேன்", description: "மண் வகையை அறிக" },
+      pest: { title: "பூச்சி ஸ்கேன்", description: "பயிர் நோய்களை கண்டறிக" },
+      advisor: { title: "ஆலோசகரிடம் கேளுங்கள்", description: "குரல் உதவி" },
+      weather: { title: "வானிலை", description: "7-நாள் முன்கணிப்பு" },
+      market: { title: "சந்தை விலைகள்", description: "சமீபத்திய மண்டி விலைகள்" },
+      history: { title: "வரலாறு", description: "கடந்த ஆலோசனைகள்" },
+    }
+  },
+  te: {
+    greeting: "శుభోదయం",
+    subtitle: "మీ పంటలను తెలివిగా పెంచడానికి సిద్ధంగా ఉన్నారా?",
+    location: "రాజ్‌కోట్, గుజరాత్",
+    weatherAlert: "వాతావరణ హెచ్చరిక",
+    weatherAlertText: "రేపు భారీ వర్షాలు అనుమానం - స్ప్రే చేయవద్దు",
+    smartFarmingTools: "స్మార్ట్ వ్యవసాయ సాధనాలు",
+    quickStats: "త్వరిత గణాంకాలు",
+    scansLabel: "స్కాన్‌లు పూర్తయ్యాయి",
+    avgPriceLabel: "సగటు ధర",
+    accuracyLabel: "ఖచ్చితత్వం",
+    features: {
+      soil: { title: "మట్టి స్కాన్", description: "మట్టి రకాన్ని విశ్లేషించండి" },
+      pest: { title: "కీటకాల స్కాన్", description: "పంట వ్యాధులను గుర్తించండి" },
+      advisor: { title: "సలహాదారుని అడగండి", description: "వాయిస్ సహాయం" },
+      weather: { title: "వాతావరణం", description: "7-రోజుల అంచనా" },
+      market: { title: "మార్కెట్ ధరలు", description: "తాజా మండి రేట్లు" },
+      history: { title: "చరిత్ర", description: "గత సలహాలు" },
+    }
+  }
+};
