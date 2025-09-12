@@ -15,8 +15,11 @@ import {
   TestTube
 } from "lucide-react";
 
+import { translations } from "@/utils/translations";
+
 interface SoilScanProps {
   onBack: () => void;
+  language: string;
 }
 
 const soilTypes = [
@@ -47,7 +50,8 @@ const mockResults = {
   ]
 };
 
-export function SoilScan({ onBack }: SoilScanProps) {
+export function SoilScan({ onBack, language }: SoilScanProps) {
+  const t = translations[language as keyof typeof translations] || translations.en;
   const [scanning, setScanning] = useState(false);
   const [results, setResults] = useState<typeof mockResults | null>(null);
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
@@ -79,8 +83,8 @@ export function SoilScan({ onBack }: SoilScanProps) {
             <div className="w-20 h-20 mx-auto mb-6 bg-gradient-primary rounded-full flex items-center justify-center animate-pulse">
               <Search className="w-10 h-10 text-white" />
             </div>
-            <h2 className="text-xl font-semibold mb-2">Analyzing Soil Sample</h2>
-            <p className="text-muted-foreground mb-6">Our AI is examining your soil composition...</p>
+            <h2 className="text-xl font-semibold mb-2">{language === 'en' ? 'Analyzing Soil Sample' : language === 'hi' ? 'मिट्टी के नमूने का विश्लेषण' : language === 'ta' ? 'மண் மாதிரி ஆய்வு' : language === 'te' ? 'మట్టి నమూనా విశ్లేషణ' : 'ਮਿੱਟੀ ਨਮੂਨਾ ਵਿਸ਼ਲੇਸ਼ਣ'}</h2>
+            <p className="text-muted-foreground mb-6">{language === 'en' ? 'Our AI is examining your soil composition...' : language === 'hi' ? 'हमारा AI आपकी मिट्टी की संरचना की जांच कर रहा है...' : language === 'ta' ? 'எங்கள் AI உங்கள் மண் அமைப்பை ஆய்வு செய்கிறது...' : language === 'te' ? 'మా AI మీ మట్టి కూర్పును పరిశీలిస్తోంది...' : 'ਸਾਡਾ AI ਤੁਹਾਡੀ ਮਿੱਟੀ ਦੀ ਰਚਨਾ ਦੀ ਜਾਂਚ ਕਰ ਰਿਹਾ ਹੈ...'}</p>
             <Progress value={75} className="mb-4" />
             <p className="text-sm text-muted-foreground">Processing: 75%</p>
           </CardContent>
@@ -97,7 +101,7 @@ export function SoilScan({ onBack }: SoilScanProps) {
             <Button variant="ghost" size="sm" onClick={onBack} className="text-white hover:bg-white/20 mr-3">
               <ArrowLeft className="w-4 h-4" />
             </Button>
-            <h1 className="text-xl font-semibold">Soil Analysis Results</h1>
+            <h1 className="text-xl font-semibold">{t.soilAnalysis}</h1>
           </div>
         </div>
 
@@ -213,9 +217,9 @@ export function SoilScan({ onBack }: SoilScanProps) {
           <Button variant="ghost" size="sm" onClick={onBack} className="text-white hover:bg-white/20 mr-3">
             <ArrowLeft className="w-4 h-4" />
           </Button>
-          <h1 className="text-xl font-semibold">Soil Analysis</h1>
+          <h1 className="text-xl font-semibold">{t.soilAnalysis}</h1>
         </div>
-        <p className="text-white/90">Upload a soil image to get crop recommendations</p>
+        <p className="text-white/90">{t.soilAnalysisDesc}</p>
       </div>
 
       <div className="p-6">

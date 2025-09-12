@@ -14,8 +14,11 @@ import {
   Calendar
 } from "lucide-react";
 
+import { translations } from "@/utils/translations";
+
 interface WeatherProps {
   onBack: () => void;
+  language: string;
 }
 
 const currentWeather = {
@@ -63,7 +66,8 @@ const advisories = [
   }
 ];
 
-export function Weather({ onBack }: WeatherProps) {
+export function Weather({ onBack, language }: WeatherProps) {
+  const t = translations[language as keyof typeof translations] || translations.en;
   return (
     <div className="min-h-screen bg-background">
       <div className="bg-gradient-primary text-white p-6">
@@ -71,7 +75,7 @@ export function Weather({ onBack }: WeatherProps) {
           <Button variant="ghost" size="sm" onClick={onBack} className="text-white hover:bg-white/20 mr-3">
             <ArrowLeft className="w-4 h-4" />
           </Button>
-          <h1 className="text-xl font-semibold">Weather Forecast</h1>
+          <h1 className="text-xl font-semibold">{t.weatherForecast}</h1>
         </div>
         <p className="text-white/90">7-day weather outlook with farming advisories</p>
       </div>

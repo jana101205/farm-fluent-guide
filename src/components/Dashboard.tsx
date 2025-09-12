@@ -18,7 +18,8 @@ import { translations } from "@/utils/translations";
 interface DashboardProps {
   onNavigate: (page: string) => void;
   language: string;
-  onLanguageChange?: () => void;
+  onLanguageChange?: (language?: string) => void;
+  userProfile?: any;
 }
 
 const featureIcons = [
@@ -30,8 +31,9 @@ const featureIcons = [
   { id: "history", icon: ScrollText, gradient: "from-purple-400 to-violet-500", shadowColor: "shadow-purple-500/20" },
 ];
 
-export function Dashboard({ onNavigate, language, onLanguageChange }: DashboardProps) {
+export function Dashboard({ onNavigate, language, onLanguageChange, userProfile }: DashboardProps) {
   const t = translations[language as keyof typeof translations] || translations.en;
+  const userName = userProfile?.full_name?.split(' ')[0] || 'Farmer';
   return (
     <div className="min-h-screen bg-gradient-to-br from-background to-accent/20 relative overflow-hidden">
       {/* Background decorative elements */}
@@ -44,7 +46,7 @@ export function Dashboard({ onNavigate, language, onLanguageChange }: DashboardP
         <div className="flex justify-between items-center mb-4">
           <div className="flex items-center space-x-2 bg-white/10 rounded-full px-3 py-1 backdrop-blur-sm">
             <MapPin className="w-4 h-4" />
-            <span className="text-sm font-medium">{t.location}</span>
+            <span className="text-sm font-medium">{userProfile?.location || t.location}</span>
           </div>
           <div className="flex items-center space-x-2">
             <Button 
@@ -74,7 +76,7 @@ export function Dashboard({ onNavigate, language, onLanguageChange }: DashboardP
           </div>
         </div>
         <div className="space-y-2">
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text">{t.greeting}, Ramesh! 🌟</h1>
+          <h1 className="text-3xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text">{t.greeting}, {userName}! 🌟</h1>
           <p className="text-white/90 text-lg font-medium">{t.subtitle}</p>
         </div>
       </div>

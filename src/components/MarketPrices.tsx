@@ -15,8 +15,11 @@ import {
   RefreshCw
 } from "lucide-react";
 
+import { translations } from "@/utils/translations";
+
 interface MarketPricesProps {
   onBack: () => void;
+  language: string;
 }
 
 const mandis = [
@@ -95,7 +98,8 @@ const cropPrices = [
   }
 ];
 
-export function MarketPrices({ onBack }: MarketPricesProps) {
+export function MarketPrices({ onBack, language }: MarketPricesProps) {
+  const t = translations[language as keyof typeof translations] || translations.en;
   const [selectedMandi, setSelectedMandi] = useState("rajkot");
   const [starredCrops, setStarredCrops] = useState(new Set(cropPrices.filter(c => c.starred).map(c => c.id)));
 
@@ -143,7 +147,7 @@ export function MarketPrices({ onBack }: MarketPricesProps) {
           <Button variant="ghost" size="sm" onClick={onBack} className="text-white hover:bg-white/20 mr-3">
             <ArrowLeft className="w-4 h-4" />
           </Button>
-          <h1 className="text-xl font-semibold">Market Prices</h1>
+          <h1 className="text-xl font-semibold">{t.marketPricesTitle}</h1>
         </div>
         <p className="text-white/90">Latest mandi rates and price trends</p>
       </div>

@@ -15,8 +15,11 @@ import {
   Bot
 } from "lucide-react";
 
+import { translations } from "@/utils/translations";
+
 interface VoiceAdvisorProps {
   onBack: () => void;
+  language: string;
 }
 
 interface Message {
@@ -34,7 +37,8 @@ const sampleQuestions = [
   "Ideal spacing for cotton plants?"
 ];
 
-export function VoiceAdvisor({ onBack }: VoiceAdvisorProps) {
+export function VoiceAdvisor({ onBack, language }: VoiceAdvisorProps) {
+  const t = translations[language as keyof typeof translations] || translations.en;
   const [isListening, setIsListening] = useState(false);
   const [textInput, setTextInput] = useState("");
   const [messages, setMessages] = useState<Message[]>([
@@ -135,9 +139,9 @@ export function VoiceAdvisor({ onBack }: VoiceAdvisorProps) {
           <Button variant="ghost" size="sm" onClick={onBack} className="text-white hover:bg-white/20 mr-3">
             <ArrowLeft className="w-4 h-4" />
           </Button>
-          <h1 className="text-xl font-semibold">Ask Your Advisor</h1>
+          <h1 className="text-xl font-semibold">{t.askAdvisor}</h1>
         </div>
-        <p className="text-white/90">Get instant farming advice in your language</p>
+        <p className="text-white/90">{t.askAdvisorDesc}</p>
       </div>
 
       {/* Messages */}

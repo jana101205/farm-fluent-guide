@@ -17,8 +17,11 @@ import {
   Leaf
 } from "lucide-react";
 
+import { translations } from "@/utils/translations";
+
 interface PestScanProps {
   onBack: () => void;
+  language: string;
 }
 
 const mockResults = {
@@ -58,7 +61,8 @@ const mockResults = {
   ]
 };
 
-export function PestScan({ onBack }: PestScanProps) {
+export function PestScan({ onBack, language }: PestScanProps) {
+  const t = translations[language as keyof typeof translations] || translations.en;
   const [scanning, setScanning] = useState(false);
   const [results, setResults] = useState<typeof mockResults | null>(null);
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
@@ -248,9 +252,9 @@ export function PestScan({ onBack }: PestScanProps) {
           <Button variant="ghost" size="sm" onClick={onBack} className="text-white hover:bg-white/20 mr-3">
             <ArrowLeft className="w-4 h-4" />
           </Button>
-          <h1 className="text-xl font-semibold">Pest & Disease Scan</h1>
+          <h1 className="text-xl font-semibold">{t.pestScan}</h1>
         </div>
-        <p className="text-white/90">Upload crop images to detect diseases and pests</p>
+        <p className="text-white/90">{t.pestScanDesc}</p>
       </div>
 
       <div className="p-6">
