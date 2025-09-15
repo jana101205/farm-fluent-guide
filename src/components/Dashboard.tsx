@@ -35,14 +35,9 @@ export function Dashboard({ onNavigate, language, onLanguageChange, userProfile 
   const t = translations[language as keyof typeof translations] || translations.en;
   const userName = userProfile?.full_name?.split(' ')[0] || 'Farmer';
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background to-accent/20 relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 bg-gradient-glow opacity-30 animate-glow"></div>
-      <div className="absolute top-20 right-10 w-32 h-32 bg-gradient-primary rounded-full opacity-10 animate-float"></div>
-      <div className="absolute bottom-20 left-10 w-24 h-24 bg-gradient-primary rounded-full opacity-10 animate-float" style={{ animationDelay: "1s" }}></div>
-
+    <div className="min-h-screen bg-gradient-to-br from-background to-accent/20">
       {/* Enhanced Header */}
-      <div className="relative bg-gradient-shimmer bg-[length:400%_400%] animate-shimmer text-white p-6 pb-8 shadow-magical">
+      <div className="bg-gradient-primary text-white p-6 pb-8 shadow-lg">
         <div className="flex justify-between items-center mb-4">
           <div className="flex items-center space-x-2 bg-white/10 rounded-full px-3 py-1 backdrop-blur-sm">
             <MapPin className="w-4 h-4" />
@@ -52,7 +47,7 @@ export function Dashboard({ onNavigate, language, onLanguageChange, userProfile 
             <Button 
               variant="ghost" 
               size="sm"
-              className="text-white hover:bg-white/20 rounded-full transition-magical hover:scale-110"
+              className="text-white hover:bg-white/20 rounded-full transition-smooth hover:scale-105"
               onClick={() => onLanguageChange && onLanguageChange()}
             >
               <Languages className="w-5 h-5" />
@@ -60,7 +55,7 @@ export function Dashboard({ onNavigate, language, onLanguageChange, userProfile 
             <Button 
               variant="ghost" 
               size="sm"
-              className="text-white hover:bg-white/20 rounded-full transition-magical hover:scale-110"
+              className="text-white hover:bg-white/20 rounded-full transition-smooth hover:scale-105"
               onClick={() => onNavigate("settings")}
             >
               <Settings className="w-5 h-5" />
@@ -68,62 +63,57 @@ export function Dashboard({ onNavigate, language, onLanguageChange, userProfile 
             <Button 
               variant="ghost" 
               size="sm"
-              className="text-white hover:bg-white/20 rounded-full transition-magical hover:scale-110 relative"
+              className="text-white hover:bg-white/20 rounded-full transition-smooth hover:scale-105 relative"
+              onClick={() => onNavigate("notifications")}
             >
               <Bell className="w-5 h-5" />
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+              <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full"></div>
             </Button>
           </div>
         </div>
         <div className="space-y-2">
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text">{t.greeting}, {userName}! 🌟</h1>
+          <h1 className="text-3xl font-bold">{t.greeting}, {userName}! 🌟</h1>
           <p className="text-white/90 text-lg font-medium">{t.subtitle}</p>
         </div>
       </div>
 
-      {/* Enhanced Alert Banner */}
+      {/* Alert Banner */}
       <div className="mx-6 -mt-4 mb-6 relative">
-        <Card className="bg-gradient-to-r from-warning/20 to-orange-500/20 border-warning/30 backdrop-blur-sm shadow-glow animate-bounce-in">
+        <Card className="bg-gradient-to-r from-warning/20 to-orange-500/20 border-warning/30 backdrop-blur-sm shadow-lg">
           <CardContent className="p-5 flex items-center space-x-4">
-            <div className="relative">
-              <div className="w-3 h-3 bg-warning rounded-full animate-pulse"></div>
-              <div className="absolute inset-0 w-3 h-3 bg-warning rounded-full animate-ping"></div>
-            </div>
+            <div className="w-3 h-3 bg-warning rounded-full"></div>
             <div className="flex-1">
               <p className="text-sm font-bold text-warning-foreground">{t.weatherAlert} ⚡</p>
               <p className="text-xs text-muted-foreground font-medium">{t.weatherAlertText}</p>
             </div>
-            <Badge variant="outline" className="text-xs bg-warning/20 border-warning text-warning-foreground font-bold animate-glow">
+            <Badge variant="outline" className="text-xs bg-warning/20 border-warning text-warning-foreground font-bold">
               Active
             </Badge>
           </CardContent>
         </Card>
       </div>
 
-      {/* Enhanced Features Grid */}
-      <div className="px-6 pb-6 relative">
-        <h2 className="text-2xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">{t.smartFarmingTools} ✨</h2>
+      {/* Features Grid */}
+      <div className="px-6 pb-6">
+        <h2 className="text-2xl font-bold mb-6 text-primary">{t.smartFarmingTools} ✨</h2>
         <div className="grid grid-cols-2 gap-5">
-          {featureIcons.map((feature, index) => {
+          {featureIcons.map((feature) => {
             const IconComponent = feature.icon;
             const featureData = t.features[feature.id as keyof typeof t.features];
             return (
               <Card 
                 key={feature.id}
-                className="cursor-pointer hover:shadow-magical transition-magical transform hover:scale-105 active:scale-95 bg-gradient-card border-0 backdrop-blur-sm animate-bounce-in group relative overflow-hidden"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="cursor-pointer hover:shadow-lg transition-smooth transform hover:scale-105 active:scale-95 bg-card border backdrop-blur-sm group"
                 onClick={() => onNavigate(feature.id)}
               >
-                <div className="absolute inset-0 bg-gradient-feature opacity-0 group-hover:opacity-100 transition-magical"></div>
-                <CardContent className="p-6 text-center relative z-10">
-                  <div className="relative mb-4">
-                    <div className={`w-18 h-18 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center mx-auto shadow-magical ${feature.shadowColor} group-hover:shadow-float transition-magical group-hover:rotate-3`}>
-                      <IconComponent className="w-10 h-10 text-white drop-shadow-lg" />
+                <CardContent className="p-6 text-center">
+                  <div className="mb-4">
+                    <div className={`w-16 h-16 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center mx-auto shadow-lg ${feature.shadowColor} transition-smooth`}>
+                      <IconComponent className="w-8 h-8 text-white" />
                     </div>
-                    <div className="absolute -inset-2 bg-gradient-to-br from-primary/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-magical animate-pulse"></div>
                   </div>
-                  <h3 className="font-bold text-sm mb-2 text-primary group-hover:text-primary-foreground transition-magical">{featureData.title}</h3>
-                  <p className="text-xs text-muted-foreground group-hover:text-foreground/80 transition-magical">{featureData.description}</p>
+                  <h3 className="font-bold text-sm mb-2 text-primary">{featureData.title}</h3>
+                  <p className="text-xs text-muted-foreground">{featureData.description}</p>
                 </CardContent>
               </Card>
             );
@@ -131,25 +121,25 @@ export function Dashboard({ onNavigate, language, onLanguageChange, userProfile 
         </div>
       </div>
 
-      {/* Enhanced Quick Stats */}
+      {/* Quick Stats */}
       <div className="px-6 pb-8">
-        <h2 className="text-2xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">{t.quickStats} 📊</h2>
+        <h2 className="text-2xl font-bold mb-6 text-primary">{t.quickStats} 📊</h2>
         <div className="grid grid-cols-3 gap-4">
-          <Card className="bg-gradient-card border-0 shadow-soft hover:shadow-magical transition-magical group cursor-pointer">
+          <Card className="bg-card border shadow-sm hover:shadow-md transition-smooth group cursor-pointer">
             <CardContent className="p-5 text-center">
-              <div className="text-3xl font-black bg-gradient-to-br from-primary to-green-600 bg-clip-text text-transparent group-hover:scale-110 transition-magical">23</div>
+              <div className="text-3xl font-black text-primary group-hover:scale-110 transition-smooth">23</div>
               <div className="text-xs text-muted-foreground font-medium mt-1">{t.scansLabel}</div>
             </CardContent>
           </Card>
-          <Card className="bg-gradient-card border-0 shadow-soft hover:shadow-magical transition-magical group cursor-pointer">
+          <Card className="bg-card border shadow-sm hover:shadow-md transition-smooth group cursor-pointer">
             <CardContent className="p-5 text-center">
-              <div className="text-3xl font-black bg-gradient-to-br from-primary to-emerald-600 bg-clip-text text-transparent group-hover:scale-110 transition-magical">₹45</div>
+              <div className="text-3xl font-black text-primary group-hover:scale-110 transition-smooth">₹45</div>
               <div className="text-xs text-muted-foreground font-medium mt-1">{t.avgPriceLabel}</div>
             </CardContent>
           </Card>
-          <Card className="bg-gradient-card border-0 shadow-soft hover:shadow-magical transition-magical group cursor-pointer">
+          <Card className="bg-card border shadow-sm hover:shadow-md transition-smooth group cursor-pointer">
             <CardContent className="p-5 text-center">
-              <div className="text-3xl font-black bg-gradient-to-br from-primary to-green-600 bg-clip-text text-transparent group-hover:scale-110 transition-magical">85%</div>
+              <div className="text-3xl font-black text-primary group-hover:scale-110 transition-smooth">85%</div>
               <div className="text-xs text-muted-foreground font-medium mt-1">{t.accuracyLabel}</div>
             </CardContent>
           </Card>

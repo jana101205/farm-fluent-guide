@@ -83,12 +83,19 @@ export function useAuth() {
     return { error };
   };
 
+  const refreshUserProfile = () => {
+    if (user) {
+      fetchUserProfile(user.id);
+    }
+  };
+
   return {
     user,
     session,
     userProfile,
     loading,
     signOut,
+    refreshUserProfile,
     isAuthenticated: !!user
   };
 }

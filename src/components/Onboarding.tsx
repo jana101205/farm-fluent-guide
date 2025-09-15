@@ -15,6 +15,7 @@ const languages: Language[] = [
   { code: "hi", name: "हिंदी", flag: "🇮🇳" },
   { code: "ta", name: "தமிழ்", flag: "🇮🇳" },
   { code: "te", name: "తెలుగు", flag: "🇮🇳" },
+  { code: "pa", name: "ਪੰਜਾਬੀ", flag: "🇮🇳" },
 ];
 
 const tutorialSlides = [
@@ -29,9 +30,9 @@ const tutorialSlides = [
     description: "Ask questions in your language and get expert farming advice instantly."
   },
   {
-    icon: "📱",
-    title: "Offline Access",
-    description: "Access your past advisories and recommendations even without internet."
+    icon: "🌦️",
+    title: "Weather & Market",
+    description: "Get real-time weather forecasts and market prices to make better farming decisions."
   }
 ];
 

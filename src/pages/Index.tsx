@@ -12,7 +12,7 @@ import { Settings } from "@/components/Settings";
 import { Notifications } from "@/components/Notifications";
 
 const Index = () => {
-  const { user, userProfile, loading, isAuthenticated } = useAuth();
+  const { user, userProfile, loading, isAuthenticated, refreshUserProfile } = useAuth();
   const [currentPage, setCurrentPage] = useState<string>("onboarding");
   const [selectedLanguage, setSelectedLanguage] = useState<string>("en");
 
@@ -107,6 +107,7 @@ const Index = () => {
         language={selectedLanguage} 
         onLanguageChange={setSelectedLanguage}
         userProfile={userProfile}
+        refreshUserProfile={refreshUserProfile}
       />
     );
   }

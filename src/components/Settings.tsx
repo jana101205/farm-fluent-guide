@@ -29,9 +29,10 @@ interface SettingsProps {
   language: string;
   onLanguageChange: (lang: string) => void;
   userProfile?: any;
+  refreshUserProfile?: () => void;
 }
 
-export function Settings({ onBack, language, onLanguageChange, userProfile }: SettingsProps) {
+export function Settings({ onBack, language, onLanguageChange, userProfile, refreshUserProfile }: SettingsProps) {
   const t = translations[language as keyof typeof translations] || translations.en;
   const { toast } = useToast();
   
@@ -78,6 +79,11 @@ export function Settings({ onBack, language, onLanguageChange, userProfile }: Se
         .eq('user_id', userProfile?.user_id);
 
       if (error) throw error;
+
+      // Refresh user profile to update the dashboard
+      if (refreshUserProfile) {
+        refreshUserProfile();
+      }
 
       toast({
         title: "Profile updated",
