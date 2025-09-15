@@ -121,28 +121,70 @@ export function Dashboard({ onNavigate, language, onLanguageChange, userProfile 
         </div>
       </div>
 
-      {/* Quick Stats */}
-      <div className="px-6 pb-8">
-        <h2 className="text-2xl font-bold mb-6 text-primary">{t.quickStats} 📊</h2>
-        <div className="grid grid-cols-3 gap-4">
-          <Card className="bg-card border shadow-sm hover:shadow-md transition-smooth group cursor-pointer">
-            <CardContent className="p-5 text-center">
-              <div className="text-3xl font-black text-primary group-hover:scale-110 transition-smooth">23</div>
-              <div className="text-xs text-muted-foreground font-medium mt-1">{t.scansLabel}</div>
+      {/* Recent Activity */}
+      <div className="px-6 pb-6">
+        <h2 className="text-2xl font-bold mb-6 text-primary">Recent Activity 📈</h2>
+        <div className="space-y-3">
+          <Card className="bg-card border shadow-sm">
+            <CardContent className="p-4 flex items-center space-x-4">
+              <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center">
+                <TestTube className="w-5 h-5 text-white" />
+              </div>
+              <div className="flex-1">
+                <p className="text-sm font-medium">Soil analysis completed</p>
+                <p className="text-xs text-muted-foreground">Wheat crop recommended • 2 hours ago</p>
+              </div>
             </CardContent>
           </Card>
-          <Card className="bg-card border shadow-sm hover:shadow-md transition-smooth group cursor-pointer">
-            <CardContent className="p-5 text-center">
-              <div className="text-3xl font-black text-primary group-hover:scale-110 transition-smooth">₹45</div>
-              <div className="text-xs text-muted-foreground font-medium mt-1">{t.avgPriceLabel}</div>
+          <Card className="bg-card border shadow-sm">
+            <CardContent className="p-4 flex items-center space-x-4">
+              <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-yellow-500 rounded-full flex items-center justify-center">
+                <Sun className="w-5 h-5 text-white" />
+              </div>
+              <div className="flex-1">
+                <p className="text-sm font-medium">Weather alert received</p>
+                <p className="text-xs text-muted-foreground">Heavy rain forecast tomorrow • 4 hours ago</p>
+              </div>
             </CardContent>
           </Card>
-          <Card className="bg-card border shadow-sm hover:shadow-md transition-smooth group cursor-pointer">
-            <CardContent className="p-5 text-center">
-              <div className="text-3xl font-black text-primary group-hover:scale-110 transition-smooth">85%</div>
-              <div className="text-xs text-muted-foreground font-medium mt-1">{t.accuracyLabel}</div>
+          <Card className="bg-card border shadow-sm">
+            <CardContent className="p-4 flex items-center space-x-4">
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-full flex items-center justify-center">
+                <Mic className="w-5 h-5 text-white" />
+              </div>
+              <div className="flex-1">
+                <p className="text-sm font-medium">Voice consultation used</p>
+                <p className="text-xs text-muted-foreground">Pest control advice received • 1 day ago</p>
+              </div>
             </CardContent>
           </Card>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <div className="bg-gradient-to-br from-primary/5 to-accent/10 border-t px-6 py-8 mt-8">
+        <div className="grid grid-cols-2 gap-6 mb-6">
+          <div>
+            <h3 className="font-bold text-primary mb-3">Quick Tips 💡</h3>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li>• Check soil moisture before irrigation</li>
+              <li>• Monitor weather for spray timing</li>
+              <li>• Regular pest monitoring saves crops</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-primary mb-3">Support 🤝</h3>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li>• 24/7 Expert helpline</li>
+              <li>• Community forums</li>
+              <li>• Video tutorials</li>
+            </ul>
+          </div>
+        </div>
+        <div className="text-center border-t pt-4">
+          <p className="text-xs text-muted-foreground">
+            SmartCropAdvisor v2.1 • Making farming smarter, one crop at a time
+          </p>
         </div>
       </div>
     </div>
