@@ -53,7 +53,7 @@ export function Dashboard({ onNavigate, language, onLanguageChange, userProfile 
               variant="ghost" 
               size="sm"
               className="text-white hover:bg-white/20 rounded-full transition-magical hover:scale-110"
-              onClick={onLanguageChange}
+              onClick={() => onLanguageChange && onLanguageChange()}
             >
               <Languages className="w-5 h-5" />
             </Button>
