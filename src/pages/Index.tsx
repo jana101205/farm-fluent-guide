@@ -10,6 +10,7 @@ import { Weather } from "@/components/Weather";
 import { MarketPrices } from "@/components/MarketPrices";
 import { Settings } from "@/components/Settings";
 import { Notifications } from "@/components/Notifications";
+import { Feedback } from "@/components/Feedback";
 
 const Index = () => {
   const { user, userProfile, loading, isAuthenticated, refreshUserProfile } = useAuth();
@@ -114,6 +115,10 @@ const Index = () => {
 
   if (currentPage === "notifications") {
     return <Notifications onBack={handleBack} language={selectedLanguage} />;
+  }
+
+  if (currentPage === "feedback") {
+    return <Feedback onBack={handleBack} language={selectedLanguage} />;
   }
 
   // Fallback to dashboard
