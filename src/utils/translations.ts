@@ -28,7 +28,23 @@ export const translations = {
       advisor: { title: "Ask Advisor", description: "Voice assistance" },
       weather: { title: "Weather", description: "7-day forecast" },
       market: { title: "Market Prices", description: "Latest mandi rates" },
-      history: { title: "History", description: "Past advisories" },
+      feedback: { title: "Feedback", description: "Share your experience" },
+    },
+    feedback: {
+      title: "Feedback & Suggestions",
+      subtitle: "Help us improve your farming experience",
+      ratingLabel: "Rate your experience",
+      feedbackLabel: "Your feedback",
+      feedbackPlaceholder: "Tell us about your experience, suggestions for improvement, or any issues you faced...",
+      categoryLabel: "Category",
+      categories: {
+        general: "General Feedback",
+        features: "Feature Request",
+        bugs: "Bug Report",
+        suggestion: "Suggestion"
+      },
+      submitButton: "Submit Feedback",
+      thankYou: "Thank you for your feedback!"
     }
   },
   hi: {
@@ -60,7 +76,23 @@ export const translations = {
       advisor: { title: "सलाहकार से पूछें", description: "आवाज सहायता" },
       weather: { title: "मौसम", description: "7-दिन का पूर्वानुमान" },
       market: { title: "बाजार मूल्य", description: "नवीनतम मंडी भाव" },
-      history: { title: "इतिहास", description: "पिछली सलाह" },
+      feedback: { title: "फीडबैक", description: "अपना अनुभव साझा करें" },
+    },
+    feedback: {
+      title: "फीडबैक और सुझाव",
+      subtitle: "हमें अपने खेती के अनुभव को बेहतर बनाने में मदद करें",
+      ratingLabel: "अपने अनुभव को रेट करें",
+      feedbackLabel: "आपका फीडबैक",
+      feedbackPlaceholder: "हमें अपने अनुभव, सुधार के सुझाव, या किसी समस्या के बारे में बताएं...",
+      categoryLabel: "श्रेणी",
+      categories: {
+        general: "सामान्य फीडबैक",
+        features: "फीचर अनुरोध",
+        bugs: "बग रिपोर्ट",
+        suggestion: "सुझाव"
+      },
+      submitButton: "फीडबैक भेजें",
+      thankYou: "आपके फीडबैक के लिए धन्यवाद!"
     }
   },
   ta: {
@@ -92,7 +124,23 @@ export const translations = {
       advisor: { title: "ஆலோசகரிடம் கேளுங்கள்", description: "குரல் உதவி" },
       weather: { title: "வானிலை", description: "7-நாள் முன்கணிப்பு" },
       market: { title: "சந்தை விலைகள்", description: "சமீபத்திய மண்டி விலைகள்" },
-      history: { title: "வரலாறு", description: "கடந்த ஆலோசனைகள்" },
+      feedback: { title: "கருத்து", description: "உங்கள் அனுபவத்தைப் பகிரவும்" },
+    },
+    feedback: {
+      title: "கருத்து மற்றும் பரிந்துரைகள்",
+      subtitle: "உங்கள் விவசாய அனுபவத்தை மேம்படுத்த எங்களுக்கு உதவுங்கள்",
+      ratingLabel: "உங்கள் அனுபவத்தை மதிப்பிடுங்கள்",
+      feedbackLabel: "உங்கள் கருத்து",
+      feedbackPlaceholder: "உங்கள் அனுபவம், மேம்படுத்தல் பரிந்துரைகள் அல்லது எதிர்கொண்ட சிக்கல்களைப் பற்றி எங்களிடம் கூறுங்கள்...",
+      categoryLabel: "வகை",
+      categories: {
+        general: "பொது கருத்து",
+        features: "அம்ச கோரிக்கை",
+        bugs: "பிழை அறிக்கை",
+        suggestion: "பரிந்துரை"
+      },
+      submitButton: "கருத்தை அனுப்பவும்",
+      thankYou: "உங்கள் கருத்துக்கு நன்றி!"
     }
   },
   te: {
@@ -124,7 +172,23 @@ export const translations = {
       advisor: { title: "సలహాదారుని అడగండి", description: "వాయిస్ సహాయం" },
       weather: { title: "వాతావరణం", description: "7-రోజుల అంచనా" },
       market: { title: "మార్కెట్ ధరలు", description: "తాజా మండి రేట్లు" },
-      history: { title: "చరిత్ర", description: "గత సలహాలు" },
+      feedback: { title: "అభిప్రాయం", description: "మీ అనుభవాన్ని పంచుకోండి" },
+    },
+    feedback: {
+      title: "అభిప్రాయం మరియు సూచనలు",
+      subtitle: "మీ వ్యవసాయ అనుభవాన్ని మెరుగుపరచడంలో మాకు సహాయం చేయండి",
+      ratingLabel: "మీ అనుభవాన్ని రేట్ చేయండి",
+      feedbackLabel: "మీ అభిప్రాయం",
+      feedbackPlaceholder: "మీ అనుభవం, మెరుగుదల సూచనలు లేదా ఎదుర్కొన్న సమస్యల గురించి మాకు చెప్పండి...",
+      categoryLabel: "వర్గం",
+      categories: {
+        general: "సాధారణ అభిప్రాయం",
+        features: "ఫీచర్ అభ్యర్థన",
+        bugs: "బగ్ రిపోర్ట్",
+        suggestion: "సూచన"
+      },
+      submitButton: "అభిప్రాయాన్ని పంపండి",
+      thankYou: "మీ అభిప్రాయానికి ధన్యవాదాలు!"
     }
   },
   pa: {
@@ -156,7 +220,23 @@ export const translations = {
       advisor: { title: "ਸਲਾਹਕਾਰ ਤੋਂ ਪੁੱਛੋ", description: "ਆਵਾਜ਼ ਸਹਾਇਤਾ" },
       weather: { title: "ਮੌਸਮ", description: "7-ਦਿਨ ਦਾ ਪੂਰਵ-ਅਨੁਮਾਨ" },
       market: { title: "ਮਾਰਕੀਟ ਕੀਮਤਾਂ", description: "ਨਵੀਨਤਮ ਮੰਡੀ ਦਰਾਂ" },
-      history: { title: "ਇਤਿਹਾਸ", description: "ਪਿਛਲੀਆਂ ਸਲਾਹਾਂ" },
+      feedback: { title: "ਫੀਡਬੈਕ", description: "ਆਪਣਾ ਤਜਰਬਾ ਸਾਂਝਾ ਕਰੋ" },
+    },
+    feedback: {
+      title: "ਫੀਡਬੈਕ ਅਤੇ ਸੁਝਾਅ",
+      subtitle: "ਆਪਣੇ ਖੇਤੀ ਦੇ ਤਜਰਬੇ ਨੂੰ ਬਿਹਤਰ ਬਣਾਉਣ ਵਿੱਚ ਸਾਡੀ ਮਦਦ ਕਰੋ",
+      ratingLabel: "ਆਪਣੇ ਤਜਰਬੇ ਨੂੰ ਰੇਟ ਕਰੋ",
+      feedbackLabel: "ਤੁਹਾਡਾ ਫੀਡਬੈਕ",
+      feedbackPlaceholder: "ਸਾਨੂੰ ਆਪਣੇ ਤਜਰਬੇ, ਸੁਧਾਰ ਦੇ ਸੁਝਾਅ, ਜਾਂ ਕਿਸੇ ਸਮਸਿਆ ਬਾਰੇ ਦੱਸੋ...",
+      categoryLabel: "ਸ਼੍ਰੇਣੀ",
+      categories: {
+        general: "ਆਮ ਫੀਡਬੈਕ",
+        features: "ਫੀਚਰ ਬੇਨਤੀ",
+        bugs: "ਬੱਗ ਰਿਪੋਰਟ",
+        suggestion: "ਸੁਝਾਅ"
+      },
+      submitButton: "ਫੀਡਬੈਕ ਭੇਜੋ",
+      thankYou: "ਤੁਹਾਡੇ ਫੀਡਬੈਕ ਲਈ ਧੰਨਵਾਦ!"
     }
   }
 };

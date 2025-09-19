@@ -28,7 +28,7 @@ const featureIcons = [
   { id: "advisor", icon: Mic, gradient: "from-blue-400 to-cyan-500", shadowColor: "shadow-blue-500/20" },
   { id: "weather", icon: Sun, gradient: "from-orange-400 to-yellow-500", shadowColor: "shadow-orange-500/20" },
   { id: "market", icon: TrendingUp, gradient: "from-green-400 to-emerald-500", shadowColor: "shadow-green-500/20" },
-  { id: "history", icon: ScrollText, gradient: "from-purple-400 to-violet-500", shadowColor: "shadow-purple-500/20" },
+  { id: "feedback", icon: ScrollText, gradient: "from-purple-400 to-violet-500", shadowColor: "shadow-purple-500/20" },
 ];
 
 export function Dashboard({ onNavigate, language, onLanguageChange, userProfile }: DashboardProps) {

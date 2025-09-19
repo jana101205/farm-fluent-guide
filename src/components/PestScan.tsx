@@ -67,14 +67,33 @@ export function PestScan({ onBack, language }: PestScanProps) {
   const [results, setResults] = useState<typeof mockResults | null>(null);
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
 
-  const handleImageUpload = () => {
-    setUploadedImage("/placeholder.svg");
-    setScanning(true);
+  const handleImageUpload = (fromCamera: boolean = false) => {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'image/*';
     
-    setTimeout(() => {
-      setScanning(false);
-      setResults(mockResults);
-    }, 3500);
+    if (fromCamera && 'mediaDevices' in navigator) {
+      input.capture = 'environment';
+    }
+    
+    input.onchange = (e) => {
+      const file = (e.target as HTMLInputElement).files?.[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          setUploadedImage(e.target?.result as string);
+          setScanning(true);
+          
+          setTimeout(() => {
+            setScanning(false);
+            setResults(mockResults);
+          }, 3500);
+        };
+        reader.readAsDataURL(file);
+      }
+    };
+    
+    input.click();
   };
 
   const handleSpeak = (text: string) => {
@@ -270,7 +289,7 @@ export function PestScan({ onBack, language }: PestScanProps) {
             
             <div className="space-y-3">
               <Button 
-                onClick={handleImageUpload}
+                onClick={() => handleImageUpload(true)}
                 className="w-full bg-gradient-primary hover:bg-primary-hover transition-smooth"
                 size="lg"
               >
@@ -278,7 +297,7 @@ export function PestScan({ onBack, language }: PestScanProps) {
                 Take Photo
               </Button>
               <Button 
-                onClick={handleImageUpload}
+                onClick={() => handleImageUpload(false)}
                 variant="outline" 
                 className="w-full" 
                 size="lg"
